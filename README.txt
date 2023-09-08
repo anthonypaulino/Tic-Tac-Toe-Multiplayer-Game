@@ -1,4 +1,5 @@
 Collaborative Project -> Authors: Anthony Paulino & Tanay Kale
+Please follow both Rutgers University's Principles of Academic Integrity and the Rutgers Department of Computer Science's Academic Integrity Policy.
 
 Run service & client:
 -----------------------------
