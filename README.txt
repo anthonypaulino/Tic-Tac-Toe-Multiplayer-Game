@@ -1,4 +1,6 @@
-Author: Anthony Paulino 
+Summary: Tic Tac Toe game service in C which implements a game client and the server to coordinate the game. The server 
+can handle multiple concurrent games through a safe multi-threaded environment that utilizes locks and header files with 
+user-defined structs and functions.
 
 Run service & client:
 -----------------------------
