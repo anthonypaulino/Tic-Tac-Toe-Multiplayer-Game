@@ -1,5 +1,4 @@
-Authors: Anthony Paulino
-Please follow both Rutgers University's Principles of Academic Integrity and the Rutgers Department of Computer Science's Academic Integrity Policy.
+Author: Anthony Paulino 
 
 Run service & client:
 -----------------------------
@@ -8,8 +7,8 @@ Two clients
 - ttt_2.c is not user-friendly, accepts malformed messages (DEBUGGING MAINLY FOR PRESENTATION LEVEL ERRORS)
 
 ./ttts 15100
-./ttt_1 cd.cs.rutgers.edu 15100
-./ttt_2 cd.cs.rutgers.edu 15100 
+./ttt_1 cd.cs.rutgers.edu 15100 (Recommended)
+./ttt_2 cd.cs.rutgers.edu 15100 (For Debugging) 
 -----------------------------
 User input commands for ttt_1.c :
 PLAY|"name"| - To begin game with specific username.
@@ -38,8 +37,7 @@ Therefore, connection threads are always exiting regardless the circumstances un
 We do not have to worry about threads accessing pair_status at the same time/ accessing pair_status when it is full, since the use of mutex ensure that when a slot filled up and another one isn't it creates the player, makes a game_t variable and creates a game thread for those two players first. This process of creating a player and and assigning slots are done 1 at a time with the use of mutex therefore it is synchronized. 
 -----------------------------
 ^C to terminate server, all games should be over, no accepted connections in the "Waiting Room".
-read() will block indefinitely, if you accept a connection and client does not send their "PLAY" message for whatever reason server will be waiting for it and block, as well the game will block waiting for a players move. 
-As long as both these conditions are met, server can be disrupted with ^C.
+read() will block indefinitely, if you accept a connection and client does not send their "PLAY" message for whatever reason the server will be waiting for it and it will block in a non-main thread so the server program will not terminate. As long as both these conditions are met, server can be disrupted with ^C.
 
 Player Capacity: 300 connected players, can be adjusted.
 
